@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+    {{/* https://gohugo.io/methods/page/title/ */}}
+    {{ .Title }}
+    </h1>
+    {{/* https://gohugo.io/methods/page/content/ */}}
+    {{ .Content }}
+  </div>
+</section>
+  
+{{ end }}
