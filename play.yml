@@ -8,11 +8,11 @@ spec:
     image: hugo
     # Used for debug
     # command: ["tail", "-f", "/dev/null"]
-    args: ["server", "--buildDrafts"]
+    args: ["server", "--buildDrafts", "--port", "1313"]
     workingDir: /srv/rgaiacs.github.io
     ports:
-    - containerPort: 80
-      hostPort: 8080
+    - containerPort: 1313
+      hostPort: 1313
     volumeMounts:
     - mountPath: /srv/rgaiacs.github.io
       name: rgaiacs.github.io
