@@ -1,0 +1,22 @@
+name: Publish to GitHub Pages
+on:
+  push:
+    branches:
+      -main
+jobs:
+  github-pages:
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - run: brew install hugo
+      - working-directory: rgaiacs.github.io
+        run: hugo build --minify
+      - name: Upload artifact to GitHub
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: rgaiacs.github.io/public
+      - name: Publish GitHub pages
+        uses: actions/deploy-pages@v4
